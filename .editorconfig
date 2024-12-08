@@ -22,7 +22,6 @@ insert_final_newline = true
 insert_final_newline = true
 
 [*.cmd]
-charset = unset
 end_of_line = crlf
 insert_final_newline = true
 
@@ -37,3 +36,10 @@ tab_width = unset
 insert_final_newline = true
 # 关闭IDEA格式化，自动缩进存在问题
 ij_formatter_enabled = false
+
+[{locales/*/cmd/*.txt,**/locales/*/*.txt}]
+trim_trailing_whitespace = false
+
+[{locales/zh_CN/cmd/*.txt,**/on-windows/**/locales/zh_CN/*.txt}]
+charset = unset
+end_of_line = crlf

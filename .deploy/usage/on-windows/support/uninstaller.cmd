@@ -25,4 +25,4 @@ rmdir /s /q %GITLAB_LOGS_DIR%
 goto end
 
 :end
-exit /b %errorlevel%
+exit /b %ErrorLevel%

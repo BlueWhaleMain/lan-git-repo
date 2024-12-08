@@ -1,6 +1,7 @@
 @if "%DEBUG%" == "" @echo off
 @rem Lan Git Repo Deploy Manual Environment Script
 set TZ=
+set LANG=en_US.utf8
 set LC_ALL=
 
 set GITLAB_SSH_PORT=22

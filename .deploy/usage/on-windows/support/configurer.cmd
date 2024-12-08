@@ -5,6 +5,7 @@ call %~dp0env.cmd
 set ENV_FILENAME=%INSTALLER_DIR%\.env
 
 echo TZ=%TZ% > %ENV_FILENAME%
+echo LANG=%LANG% > %ENV_FILENAME%
 echo LC_ALL=%LC_ALL% >> %ENV_FILENAME%
 echo= >> %ENV_FILENAME%
 echo GITLAB_SSH_PORT=%GITLAB_SSH_PORT% >> %ENV_FILENAME%
@@ -18,7 +19,8 @@ echo GITLAB_LOGS_DIR=%GITLAB_LOGS_DIR% >> %ENV_FILENAME%
 
 docker compose config || goto end
 
-echo Complete.
+type %LOCALE_DIR%\configure_complete.txt
+echo=
 
 :end
-exit /b %errorlevel%
+exit /b %ErrorLevel%

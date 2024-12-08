@@ -3,6 +3,7 @@ services:
     image: gitlab/gitlab-ce:latest
     environment:
       - "TZ=${TZ}"
+      - "LANG=${LANG}"
       - "LC_ALL=${LC_ALL}"
     restart: unless-stopped
     logging:

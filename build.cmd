@@ -1,12 +1,15 @@
 @if "%DEBUG%" == "" @echo off
 @rem Lan Git Repo Dev Runtime Building Script
-
-docker -v || exit 1
+call env.cmd || goto end
 
 @rem Outline Usage
-@rem robocopy  %~dp0.deploy\images %~dp0dev_build\lan-git-repo-images\lan-git-repo\images /e /mir
-@rem docker save gitlab/gitlab-ce:latest > %~dp0dev_build\lan-git-repo-images\lan-git-repo\images\gitlab-gitlab-ce-latest.tar
+@rem robocopy %DEPLOY_DIR%\images %BUILD_DIR%\%PROJECTNAME%-images\%PROJECTNAME%\images /e /mir
+@rem docker save gitlab/gitlab-ce:latest > %BUILD_DIR%\%PROJECTNAME%-images\%PROJECTNAME%\images\gitlab-gitlab-ce-latest.tar
 
-robocopy  %~dp0.deploy\usage\on-windows %~dp0dev_build\lan-git-repo-on-windows\lan-git-repo\usage\lan-git-repo /e /mir
+robocopy %DEPLOY_DIR%\usage\on-windows %BUILD_DIR%\%PROJECTNAME%-on-windows\%PROJECTNAME%\usage\%PROJECTNAME% /e /mir
 
-echo Complete.
+type %LOCALE_DIR%\build_complete.txt
+echo=
+
+:end
+exit /b %ErrorLevel%

@@ -1,0 +1,1 @@
+[31;1m[×][0m Must configure first before execute install.

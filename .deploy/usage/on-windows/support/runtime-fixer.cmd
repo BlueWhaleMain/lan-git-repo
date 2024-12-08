@@ -5,13 +5,17 @@ call %~dp0env.cmd
 docker -v || goto end
 
 if exist %INSTALL_DIR%\images\gitlab-gitlab-ce-latest.tar (
-  echo [i] found outline image for GitLab.
+  type %LOCALE_DIR%\outline_image_for_gitlab.txt
+  echo=
   docker load -i %INSTALL_DIR%\images\gitlab-gitlab-ce-latest.tar
 ) else (
-  echo [?] %INSTALL_DIR%\images\gitlab-gitlab-ce-latest.tar not found, may be pull.
-  set errorlevel=
+  type %LOCALE_DIR%\question_message_head.txt
+  echo %INSTALL_DIR%\images\gitlab-gitlab-ce-latest.tar
+  type %LOCALE_DIR%\not_found_may_pull.txt
+  echo=
+  set ErrorLevel=
 )
 goto end
 
 :end
-exit /b %errorlevel%
+exit /b %ErrorLevel%

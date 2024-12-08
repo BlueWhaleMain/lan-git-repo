@@ -16,8 +16,10 @@ if "%GITLAB_HTTP_PORT%" == "80" (
 ) else (
   echo [+] GitLab: http://localhost:%GITLAB_HTTP_PORT%/
 )
-echo Password filepath: %GITLAB_CONFIG_DIR%\initial_root_password
-echo Please wait the services startup.
+type %LOCALE_DIR%\gitlab_initial_password_filepath.txt
+echo %GITLAB_CONFIG_DIR%\initial_root_password
+type %LOCALE_DIR%\wait_services_startup.txt
+echo=
 
 :end
-exit /b %errorlevel%
+exit /b %ErrorLevel%
