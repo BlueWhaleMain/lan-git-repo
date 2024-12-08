@@ -1,11 +1,22 @@
 # 本地GIT仓库
 
+| 语言   | [简体中文](README.md) | English |
+|------|-------------------|---------|
+| 翻译进度 | 100%              | 50%     |
+
 面向内部网络的GitLab部署方案。
 
 ## 该部署方案提供的功能
 
 * 内部GIT仓库
 * 开发环境
+
+| 支持的环境             | Windows                | Linux                  | Mac                |
+|-------------------|------------------------|------------------------|--------------------|
+| 开发环境              | :white_check_mark:完全支持 | :construction:尚未支持     | :construction:尚未支持 |
+| 自动化部署             | :white_check_mark:完全支持 | :construction:尚未支持     | :x:暂不支持            |
+| Docker Compose 配置 | :white_check_mark:完全支持 | :warning:未经测试          | :x:暂不支持            |
+| Docker 镜像         | :white_check_mark:完全支持 | :white_check_mark:完全支持 | :warning:未经测试      |
 
 ## 依赖
 
